@@ -138,7 +138,7 @@ def calculate_correlations(df: pd.DataFrame, variables: dict) -> dict:
         A dictionary containing the correlation matrices for each of the active correlation measures.
     """
     correlations = {}
-    for correlation_name in ["pearson", "spearman", "kendall"]:
+    for correlation_name in ["pearson", "spearman"]:
         if config["correlations"][correlation_name].get(bool):
             try:
                 correlation = df.corr(method=correlation_name)
